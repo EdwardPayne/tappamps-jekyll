@@ -1,0 +1,93 @@
+---
+layout: default
+title: "Home"
+---
+
+<!-- Hero -->
+<section class="hero">
+    <p class="hero__tagline">Handcrafted in Sweden</p>
+    <h1 class="hero__title">Tapp Amps</h1>
+    <p class="hero__subtitle">
+        Boutique all-tube guitar amplifiers, hand-wired in Borlänge, Sweden.
+        Built on request. No shortcuts. No compromises.
+    </p>
+    <a href="{{ '/amps/' | relative_url }}" class="btn btn--filled">Explore Our Amps</a>
+</section>
+
+<!-- Amplifiers Preview -->
+<section class="section">
+    <div class="container">
+        <h2 class="section__title">Our Amplifiers</h2>
+        <div class="amp-grid">
+            {% assign sorted_amps = site.amps | sort: "order" %}
+            {% for amp in sorted_amps %}
+            <a href="{{ amp.url | relative_url }}" class="amp-card" style="text-decoration:none; color:inherit;">
+                {% if amp.images and amp.images.first %}
+                <img class="amp-card__image" src="{{ amp.images.first | relative_url }}" alt="{{ amp.title }}">
+                {% else %}
+                <div class="placeholder-img amp-card__image" style="aspect-ratio:16/9;">Photo coming soon</div>
+                {% endif %}
+                <div class="amp-card__body">
+                    <h3 class="amp-card__title">{{ amp.title }}</h3>
+                    <p class="amp-card__specs">{{ amp.wattage }}W · {{ amp.type }}</p>
+                    <p class="amp-card__excerpt">{{ amp.excerpt }}</p>
+                    <span class="btn">View Details</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Brand Values -->
+<section class="section" style="background: #1a1a1a;">
+    <div class="container">
+        <h2 class="section__title">Why Tapp Amps</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature__icon">⚡</div>
+                <h3 class="feature__title">All-Tube Design</h3>
+                <p class="feature__text">
+                    Every Tapp Amp is powered by real tubes — delivering the warmth, dynamics,
+                    and harmonic richness that only valves can provide.
+                </p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">🔧</div>
+                <h3 class="feature__title">Hand-Wired</h3>
+                <p class="feature__text">
+                    Point-to-point wiring using hand-selected components. No PCBs, no shortcuts —
+                    just meticulous craftsmanship.
+                </p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">🇸🇪</div>
+                <h3 class="feature__title">Made in Sweden</h3>
+                <p class="feature__text">
+                    Designed and built in Borlänge, Dalarna. Swedish engineering
+                    meets tube amplifier artistry.
+                </p>
+            </div>
+            <div class="feature">
+                <div class="feature__icon">🎸</div>
+                <h3 class="feature__title">Built on Request</h3>
+                <p class="feature__text">
+                    Each amplifier is built specifically for its owner. No mass production —
+                    limited editions and bespoke builds only.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section">
+    <div class="container" style="text-align: center;">
+        <h2 class="section__title">Interested in a Tapp Amp?</h2>
+        <p style="color: #888; max-width: 500px; margin: 0 auto 2rem;">
+            Every Tapp Amp starts with a conversation. Tell us about your playing
+            and we'll help you find the right amplifier.
+        </p>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn--filled">Get in Touch</a>
+    </div>
+</section>

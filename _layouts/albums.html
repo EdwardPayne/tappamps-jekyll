@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-header__title">Artists & Albums</h1>
+        <p class="page-header__subtitle">Music recorded with Tapp Amps</p>
+    </div>
+
+    <div class="section">
+        <div class="album-grid">
+            {% for album in site.albums %}
+            <div class="album-card">
+                {% if album.cover_image %}
+                <img class="album-card__image" src="{{ album.cover_image | relative_url }}"
+                    alt="{{ album.title }} by {{ album.artist }}">
+                {% else %}
+                <div class="placeholder-img album-card__image">Album Art</div>
+                {% endif %}
+                <div class="album-card__body">
+                    <h3 class="album-card__title">{{ album.title }}</h3>
+                    <p class="album-card__artist">{{ album.artist }}</p>
+                    <div class="album-card__links">
+                        {% if album.spotify_url and album.spotify_url != "" %}
+                        <a href="{{ album.spotify_url }}" target="_blank" rel="noopener">Spotify</a>
+                        {% endif %}
+                        {% if album.youtube_url and album.youtube_url != "" %}
+                        <a href="{{ album.youtube_url }}" target="_blank" rel="noopener">YouTube</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

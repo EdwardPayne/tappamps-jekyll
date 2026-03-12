@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="amp-detail">
+        <div class="amp-detail__header">
+            <p class="amp-detail__wattage">{{ page.wattage }}W · {{ page.type }}</p>
+            <h1>{{ page.title }}</h1>
+        </div>
+
+        {% if page.images %}
+        <div class="amp-detail__gallery">
+            {% for img in page.images %}
+            <img src="{{ img | relative_url }}" alt="{{ page.title }}">
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="amp-detail__gallery">
+            <div class="placeholder-img" style="aspect-ratio:16/9;">Photo coming soon</div>
+        </div>
+        {% endif %}
+
+        <div class="amp-detail__body">
+            {{ content }}
+
+            {% if page.specs %}
+            <h2>Specifications</h2>
+            <table class="specs-table">
+                <tbody>
+                    {% for spec in page.specs %}
+                    <tr>
+                        <th>{{ spec[0] }}</th>
+                        <td>{{ spec[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+
+        <div style="text-align:center; margin-top:3rem;">
+            <a href="{{ '/contact/' | relative_url }}" class="btn btn--filled">Enquire About This Amp</a>
+        </div>
+    </div>
+</div>

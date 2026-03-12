@@ -1,0 +1,62 @@
+# Site settings
+title: "Tapp Amps"
+description: "Handcrafted boutique guitar amplifiers from Borlänge, Sweden. Limited edition tube amps built on request."
+url: "https://tappamps.com"
+baseurl: ""
+lang: "en"
+
+# Contact
+email: "info@tappamps.com"
+
+# Social
+social:
+  facebook: "https://www.facebook.com/tappamps"
+  instagram: "https://www.instagram.com/tappamps"
+
+# Collections
+collections:
+  amps:
+    output: true
+    permalink: /amps/:slug/
+  albums:
+    output: true
+    permalink: /albums/:slug/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "amps"
+    values:
+      layout: "amp"
+  - scope:
+      path: ""
+      type: "albums"
+    values:
+      layout: "album"
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - CLAUDE.md
+  - .github
+  - README.md

@@ -1,0 +1,654 @@
+// Variables - Dark Theme
+$color-bg: #0d0d0d;
+$color-bg-alt: #1a1a1a;
+$color-bg-card: #141414;
+$color-border: #2a2a2a;
+$color-text: #e0e0e0;
+$color-text-muted: #888;
+$color-heading: #f5f5f5;
+$color-accent: #c9a84c; // Warm gold — fits tube amp aesthetic
+$color-accent-hover: #dfc06a;
+$color-white: #fff;
+$color-black: #000;
+
+$font-body:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+$font-heading: "Oswald", "Impact", sans-serif;
+
+$max-width: 1200px;
+$nav-height: 72px;
+
+// Reset & base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-body;
+  background: $color-bg;
+  color: $color-text;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover {
+    color: $color-accent-hover;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+  color: $color-heading;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// ── Navigation ──────────────────────────────────────────
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba($color-bg, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border;
+  height: $nav-height;
+}
+
+.nav-wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+
+  img {
+    height: 44px;
+    width: auto;
+  }
+
+  .logo-text {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $color-heading;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  .nav-item {
+    position: relative;
+
+    > a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: $color-text-muted;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      transition: color 0.2s;
+
+      &:hover,
+      &.active {
+        color: $color-accent;
+      }
+    }
+
+    // Dropdown
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: $color-bg-alt;
+      border: 1px solid $color-border;
+      min-width: 180px;
+      padding: 0.5rem 0;
+      z-index: 100;
+
+      a {
+        display: block;
+        padding: 0.5rem 1.25rem;
+        color: $color-text-muted;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+
+        &:hover {
+          color: $color-accent;
+          background: rgba($color-accent, 0.05);
+        }
+      }
+    }
+
+    &:hover .submenu {
+      display: block;
+    }
+  }
+}
+
+// Mobile nav toggle
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $color-text;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: $nav-height;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: $color-bg-alt;
+    border-bottom: 1px solid $color-border;
+    padding: 1rem 0;
+
+    &.open {
+      display: flex;
+    }
+
+    .nav-item .submenu {
+      position: static;
+      border: none;
+      background: transparent;
+      padding-left: 1rem;
+    }
+
+    .nav-item:hover .submenu {
+      display: block;
+    }
+  }
+}
+
+// ── Main content ────────────────────────────────────────
+.site-content {
+  padding-top: $nav-height;
+  min-height: 100vh;
+}
+
+// ── Hero Section ────────────────────────────────────────
+.hero {
+  position: relative;
+  padding: 8rem 2rem 6rem;
+  text-align: center;
+  background: linear-gradient(180deg, $color-bg 0%, $color-bg-alt 100%);
+  border-bottom: 1px solid $color-border;
+
+  &__tagline {
+    font-family: $font-heading;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: $color-accent;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.15rem;
+    color: $color-text-muted;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font-family: $font-heading;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 2px solid $color-accent;
+  color: $color-accent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    background: $color-accent;
+    color: $color-bg;
+  }
+
+  &--filled {
+    background: $color-accent;
+    color: $color-bg;
+
+    &:hover {
+      background: $color-accent-hover;
+      border-color: $color-accent-hover;
+      color: $color-bg;
+    }
+  }
+}
+
+// ── Amp Cards Grid ──────────────────────────────────────
+.section {
+  padding: 5rem 0;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: $color-accent;
+      margin: 1rem auto 0;
+    }
+  }
+}
+
+.amp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.amp-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  overflow: hidden;
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
+
+  &:hover {
+    border-color: $color-accent;
+    transform: translateY(-4px);
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    background: $color-bg-alt;
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+  }
+
+  &__specs {
+    font-size: 0.85rem;
+    color: $color-accent;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__excerpt {
+    color: $color-text-muted;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+// ── Single Amp Page ─────────────────────────────────────
+.amp-detail {
+  padding: 4rem 0;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__wattage {
+    font-size: 1rem;
+    color: $color-accent;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      background: $color-bg-alt;
+      border: 1px solid $color-border;
+    }
+  }
+
+  &__body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+    h2,
+    h3 {
+      margin-top: 2rem;
+    }
+  }
+}
+
+// ── Specs Table ─────────────────────────────────────────
+.specs-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid $color-border;
+  }
+
+  th {
+    color: $color-accent;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: 40%;
+  }
+
+  td {
+    color: $color-text;
+  }
+}
+
+// ── Albums Grid ─────────────────────────────────────────
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.album-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  overflow: hidden;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $color-accent;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: $color-bg-alt;
+  }
+
+  &__body {
+    padding: 0.75rem 1rem;
+  }
+
+  &__title {
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+
+  &__artist {
+    color: $color-accent;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 0.75rem;
+
+    a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+  }
+}
+
+// ── About / Page ────────────────────────────────────────
+.page-content {
+  padding: 4rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+  h2,
+  h3 {
+    margin-top: 2rem;
+  }
+
+  ul,
+  ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.page-header {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__subtitle {
+    color: $color-text-muted;
+    margin-top: 0.5rem;
+  }
+}
+
+// ── Contact ─────────────────────────────────────────────
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+
+  &__item {
+    padding: 1.5rem;
+    background: $color-bg-card;
+    border: 1px solid $color-border;
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: $color-accent;
+    }
+
+    p,
+    a {
+      color: $color-text-muted;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// ── Footer ──────────────────────────────────────────────
+.site-footer {
+  border-top: 1px solid $color-border;
+  padding: 3rem 0;
+  background: $color-bg-alt;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  &__copy {
+    color: $color-text-muted;
+    font-size: 0.85rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: $color-text-muted;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+// ── Featured / Highlights ───────────────────────────────
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  padding: 2rem;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  text-align: center;
+
+  &__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $color-accent;
+  }
+
+  &__title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+  }
+}
+
+// ── Placeholder image ───────────────────────────────────
+.placeholder-img {
+  background: $color-bg-alt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-muted;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid $color-border;
+}

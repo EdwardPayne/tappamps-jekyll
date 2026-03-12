@@ -1,0 +1,33 @@
+<header class="site-header">
+    <div class="nav-wrapper">
+        <a href="{{ '/' | relative_url }}" class="site-logo">
+            {% if site.logo %}
+            <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+            {% endif %}
+            <span class="logo-text">Tapp Amps</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav">
+            {% for item in site.data.navigation %}
+            <div class="nav-item">
+                <a href="{{ item.url | relative_url }}" {% if page.url==item.url %}class="active" {% endif %}>
+                    {{ item.title }}
+                </a>
+                {% if item.submenu %}
+                <div class="submenu">
+                    {% for sub in item.submenu %}
+                    <a href="{{ sub.url | relative_url }}">{{ sub.title }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </nav>
+    </div>
+</header>

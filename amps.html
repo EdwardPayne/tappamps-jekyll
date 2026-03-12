@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Amplifiers"
+permalink: /amps/
+---
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-header__title">Our Amplifiers</h1>
+        <p class="page-header__subtitle">Handcrafted all-tube amplifiers · Built on request · Made in Sweden</p>
+    </div>
+
+    <div class="section">
+        <div class="amp-grid">
+            {% assign sorted_amps = site.amps | sort: "order" %}
+            {% for amp in sorted_amps %}
+            <a href="{{ amp.url | relative_url }}" class="amp-card" style="text-decoration:none; color:inherit;">
+                {% if amp.images and amp.images.first %}
+                <img class="amp-card__image" src="{{ amp.images.first | relative_url }}" alt="{{ amp.title }}">
+                {% else %}
+                <div class="placeholder-img amp-card__image" style="aspect-ratio:16/9;">Photo coming soon</div>
+                {% endif %}
+                <div class="amp-card__body">
+                    <h3 class="amp-card__title">{{ amp.title }}</h3>
+                    <p class="amp-card__specs">{{ amp.wattage }}W · {{ amp.type }}</p>
+                    <p class="amp-card__excerpt">{{ amp.excerpt }}</p>
+                    <span class="btn">View Details</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
