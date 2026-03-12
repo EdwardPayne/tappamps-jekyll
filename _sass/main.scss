@@ -133,6 +133,23 @@ h3 {
   }
 }
 
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.5rem;
+
+  a {
+    color: $color-text-muted;
+    transition: color 0.2s;
+    display: flex;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -238,6 +255,11 @@ h3 {
     .nav-item:hover .submenu {
       display: block;
     }
+  }
+
+  .nav-social {
+    margin-left: 0;
+    margin-right: 0.5rem;
   }
 }
 
@@ -594,13 +616,13 @@ h3 {
 
   &__social {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.25rem;
 
     a {
       color: $color-text-muted;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      transition: color 0.2s;
+      display: flex;
 
       &:hover {
         color: $color-accent;
