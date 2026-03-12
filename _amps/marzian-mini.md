@@ -12,7 +12,7 @@ specs:
   Tubes: "EL34 power section"
   Channels: "2 (Clean / High Gain)"
   Speaker Output: "4/8/16 Ohm"
-  Construction: "Hand-wired, point-to-point"
+  Construction: "Custom PCB design"
   Weight: "TBD"
   Origin: "Handcrafted in Borlänge, Sweden"
 order: 2

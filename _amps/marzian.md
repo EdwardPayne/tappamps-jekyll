@@ -3,7 +3,7 @@ title: "Marzian"
 slug: marzian
 wattage: 100
 type: "All-Tube Head"
-excerpt: "The flagship. 100 watts of pure Swedish tube fury, hand-wired with uncompromising attention to detail."
+excerpt: "The flagship. 100 watts of pure Swedish tube fury, handcrafted with uncompromising attention to detail."
 images:
   - /assets/images/amps/tapp-marzian.jpg
 specs:
@@ -11,7 +11,7 @@ specs:
   Tubes: "EL34 power section"
   Channels: "2 (Clean / High Gain)"
   Speaker Output: "4/8/16 Ohm"
-  Construction: "Hand-wired, point-to-point"
+  Construction: "Custom PCB design"
   Weight: "TBD"
   Origin: "Handcrafted in Borlänge, Sweden"
 order: 1
@@ -19,7 +19,7 @@ order: 1
 
 The Marzian is the flagship amplifier from Tapp Amps — a full-power 100-watt all-tube head designed for players who demand uncompromising tone and dynamic response.
 
-Built entirely by hand in Borlänge, Sweden, each Marzian is a labor of precision and passion. From the hand-selected components to the point-to-point wiring, every detail is crafted to deliver an amplifier that breathes, responds, and inspires.
+Built entirely by hand in Borlänge, Sweden, each Marzian is a labor of precision and passion. From the hand-selected components to the proprietary PCB design, every detail is crafted to deliver an amplifier that breathes, responds, and inspires.
 
 ## Tone & Character
 

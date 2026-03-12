@@ -9,6 +9,8 @@
       url: "/amps/marzian-mini/"
     - title: "IRATUS"
       url: "/amps/iratus/"
+    - title: "JCM 900 Mod"
+      url: "/amps/jcm900-mod/"
 - title: "Artists & Albums"
   url: "/albums/"
 - title: "About"

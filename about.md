@@ -9,7 +9,7 @@ permalink: /about/
 
 Tapp Amps is a boutique amplifier manufacturer based in Borlänge, Sweden. Every amplifier that leaves our workshop is designed, built, and tested by hand — no assembly lines, no mass production, no compromises.
 
-We build tube amplifiers the way they should be built: with carefully selected components, point-to-point wiring, and an obsessive attention to detail that only a small workshop can deliver.
+We build tube amplifiers the way they should be built: with carefully selected components, proprietary PCB designs, and an obsessive attention to detail that only a small workshop can deliver.
 
 ## Philosophy
 
