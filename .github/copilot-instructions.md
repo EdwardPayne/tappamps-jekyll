@@ -22,7 +22,8 @@ The site uses a custom dark theme with SASS, no CSS framework.
 - Font stack: Oswald for headings (uppercase), Inter for body
 - BEM-like CSS class naming: `.block__element--modifier`
 - Amp pages use front matter for specs, wattage, type, images, order
-- Album entries use front matter for artist, amp_used, cover_image, spotify/youtube URLs
+- Album entries use front matter for artist, cover_image, spotify/youtube URLs
+- Social media icons (inline SVG) in header and footer
 - All images go in `assets/images/{amps,albums,brand}/`
 - Navigation changes require editing `_data/navigation.yml`
 
@@ -45,4 +46,5 @@ bundle exec jekyll build   # production build to _site/
 - `_sass/main.scss` — all styles
 - `_data/navigation.yml` — menu structure
 - `_layouts/amp.html` — amp detail template (specs table, gallery, CTA)
-- `_includes/header.html` — logo + responsive nav
+- `_includes/header.html` — logo + responsive nav + social icons
+- `_includes/footer.html` — copyright + social icons

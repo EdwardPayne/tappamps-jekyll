@@ -28,7 +28,10 @@ bundle exec jekyll serve --drafts  # Include draft posts
 │   ├── marzian-mini.md
 │   └── iratus.md
 ├── _albums/                # Album/artist entries (collection)
-│   └── placeholder-album.md
+│   ├── aeon-aeons-black.md
+│   ├── souldrainer-architect.md
+│   ├── sabaton-carolus-rex.md
+│   └── ... (17 albums total)
 ├── _data/
 │   └── navigation.yml      # Top nav menu structure
 ├── _includes/
@@ -85,18 +88,16 @@ order: 4 # Controls display order
 
 ## Adding a New Album
 
-1. Create a new `.md` file in `_albums/` (e.g., `_albums/album-name.md`)
+1. Create a new `.md` file in `_albums/` (e.g., `_albums/band-album-name.md`)
 2. Use this front matter:
 
 ```yaml
 ---
 title: "Album Title"
 artist: "Artist Name"
-amp_used: "Tapp Amps Marzian"
-cover_image: /assets/images/albums/album-cover.jpg
+cover_image: /assets/images/albums/band-album-name.jpg
 spotify_url: "https://open.spotify.com/album/..."
 youtube_url: "https://youtube.com/..."
-year: 2024
 ---
 ```
 
@@ -130,5 +131,7 @@ year: 2024
 - All amps are built on request only (boutique / limited edition)
 - Logo placeholder is in the header — replace `logo-text` span with an `<img>` when logo file is provided
 - Set `logo: /assets/images/brand/logo.png` in `_config.yml` when available
-- Placeholder album entries should be replaced with real data
-- Image placeholders display "Photo coming soon" / "Album Art" text
+- Social media icons (SVG) in both header and footer (Facebook, Instagram, Email)
+- Album grid uses compact 200px-min cards, scales to many entries
+- Image aspect ratios: amp images use 16:9, album covers use 1:1
+- GitHub repo: `git@github.com:EdwardPayne/tappamps-jekyll.git`
