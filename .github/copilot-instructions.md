@@ -25,7 +25,9 @@ The site uses a custom dark theme with SASS, no CSS framework.
 - Album entries use front matter for artist, cover_image, spotify/youtube URLs
 - Social media icons (inline SVG) in header and footer
 - All images go in `assets/images/{amps,albums,brand}/`
+- SVG logos in `assets/logos/`, displayed with `filter: invert(1)` on dark background
 - Navigation changes require editing `_data/navigation.yml`
+- Maintenance mode: set `maintenance: true` in `_config.yml` to show coming-soon page
 
 ## Adding Content
 
@@ -36,7 +38,7 @@ The site uses a custom dark theme with SASS, no CSS framework.
 ## Build
 
 ```bash
-bundle exec jekyll serve   # local dev
+bundle exec jekyll serve   # local dev (overrides url to localhost)
 bundle exec jekyll build   # production build to _site/
 ```
 

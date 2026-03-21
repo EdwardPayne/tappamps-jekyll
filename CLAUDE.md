@@ -47,10 +47,11 @@ bundle exec jekyll serve --drafts  # Include draft posts
 │   └── main.scss            # All styles (dark theme)
 ├── assets/
 │   ├── css/style.scss       # SASS entry point
+│   ├── logos/               # SVG logos (tapp.svg, tappamps.svg)
 │   └── images/
 │       ├── amps/            # Amp product photos
 │       ├── albums/          # Album artwork
-│       └── brand/           # Logo, favicon, brand assets
+│       └── brand/           # Favicon, brand assets
 ├── index.html               # Homepage
 ├── amps.html                # Amps listing page
 ├── albums.html              # Albums listing page
@@ -103,12 +104,24 @@ youtube_url: "https://youtube.com/..."
 
 3. Add album art to `assets/images/albums/`
 
+## Maintenance Mode
+
+The site has a built-in maintenance/coming-soon page controlled by a flag in `_config.yml`:
+
+```yaml
+maintenance: true   # Show coming-soon page
+maintenance: false  # Show full site
+```
+
+When enabled, `_layouts/default.html` replaces all page content with a centered logo, tagline, and social links. Styles are in the `.maintenance` BEM block in `_sass/main.scss`.
+
 ## Key Configuration
 
+- **Maintenance mode:** `_config.yml` → `maintenance: true/false`
+- **Logo:** `_config.yml` → `logo: /assets/logos/tappamps.svg`
 - **Social links:** `_config.yml` → `social.facebook`, `social.instagram`
 - **Contact email:** `_config.yml` → `email`
 - **Navigation:** `_data/navigation.yml`
-- **Logo:** Set `logo:` in `_config.yml` and place file in `assets/images/brand/`
 
 ## Theme Colors (in `_sass/main.scss`)
 
@@ -129,9 +142,9 @@ youtube_url: "https://youtube.com/..."
 ## Notes
 
 - All amps are built on request only (boutique / limited edition)
-- Logo placeholder is in the header — replace `logo-text` span with an `<img>` when logo file is provided
-- Set `logo: /assets/images/brand/logo.png` in `_config.yml` when available
+- Logo: SVG in `assets/logos/tappamps.svg`, displayed with `filter: invert(1)` (black SVG → white on dark bg)
 - Social media icons (SVG) in both header and footer (Facebook, Instagram, Email)
 - Album grid uses compact 200px-min cards, scales to many entries
 - Image aspect ratios: amp images use 16:9, album covers use 1:1
+- **Production build:** Always use `bundle exec jekyll build` — `jekyll serve` overrides the `url` to localhost
 - GitHub repo: `git@github.com:EdwardPayne/tappamps-jekyll.git`

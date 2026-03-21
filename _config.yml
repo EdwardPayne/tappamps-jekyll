@@ -5,7 +5,7 @@ url: "https://tappamps.com"
 baseurl: ""
 lang: "en"
 logo: /assets/logos/tappamps.svg
-maintenance: true
+maintenance: false
 
 # Contact
 email: "info@tappamps.com"
