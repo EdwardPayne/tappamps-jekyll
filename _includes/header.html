@@ -3,8 +3,9 @@
         <a href="{{ '/' | relative_url }}" class="site-logo">
             {% if site.logo %}
             <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
-            {% endif %}
+            {% else %}
             <span class="logo-text">Tapp Amps</span>
+            {% endif %}
         </a>
 
         <button class="nav-toggle" aria-label="Toggle navigation">

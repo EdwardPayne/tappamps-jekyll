@@ -121,6 +121,13 @@ h3 {
   img {
     height: 44px;
     width: auto;
+    filter: invert(1);
+    transition: filter 0.2s;
+  }
+
+  &:hover img {
+    filter: invert(78%) sepia(20%) saturate(700%) hue-rotate(8deg)
+      brightness(90%) contrast(90%);
   }
 
   .logo-text {

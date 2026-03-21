@@ -4,6 +4,7 @@ description: "Handcrafted boutique guitar amplifiers from Borlänge, Sweden. Lim
 url: "https://tappamps.com"
 baseurl: ""
 lang: "en"
+logo: /assets/logos/tappamps.svg
 
 # Contact
 email: "info@tappamps.com"
