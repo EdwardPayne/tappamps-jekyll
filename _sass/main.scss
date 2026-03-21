@@ -681,3 +681,65 @@ h3 {
   letter-spacing: 0.1em;
   border: 1px solid $color-border;
 }
+
+// Maintenance / Coming Soon
+.maintenance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: $color-bg;
+  padding: 2rem;
+  text-align: center;
+
+  &__content {
+    max-width: 480px;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+    filter: invert(1);
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 3rem;
+    color: $color-heading;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2.5rem;
+  }
+
+  &__text {
+    font-family: $font-heading;
+    font-size: 1.25rem;
+    color: $color-accent;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtext {
+    font-size: 0.95rem;
+    color: $color-text-muted;
+    margin-bottom: 2.5rem;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    a {
+      color: $color-text-muted;
+      transition: color 0.2s;
+      display: flex;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
